@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # takes in dna string patterns and counts the matches in a given file
+# must be a valid dna string pattern (it will take non-valid ones at the moment)
 
 if [ $# -eq 0 ]
 then
