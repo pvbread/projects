@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# takes in dna string patterns and counts the matches in a given file
+
+if [ $# -eq 0 ]
+then
+	echo "No file entered. Usage: countmatches <filename> <DNA Args (string)>. Eg: countmatches dna.txt agc agg"
+	exit
+fi
+
+if [ -f $1 ]
+then
+	if [ $# -eq 1 ]
+	then
+		echo "Missing argument. Usage: countmatches <filename> <DNA Args (string)>. Eg: countmatches dna.txt agc agg"
+	fi
+else
+	echo "$1 is not a file. Usage: countmatches <filename> <DNA Args (string)>. Eg: countmatches dna.txt agc agg"
+fi
+
+for i in $(seq 2 $#)
+do
+	echo "${!i} $(grep -o ${!i} <<< `cat $1` | wc -l)"
+done
+

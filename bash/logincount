@@ -1,0 +1,45 @@
+#!/bin/bash
+
+if [ $# -eq 0 ]
+then
+	echo "Usage: logincount <list of user names>"
+	exit
+fi
+
+students=(`ls /data/biocs/b/student.accounts/`)
+
+for name in $(seq 1 $#)
+do
+	valid=0
+	echo "----"
+	#check for user membership in directory
+
+	for i in ${students[*]}
+	do
+		if [ ${!name} == $i ]
+        	then
+			valid=1
+			#iterate through login attempts of i'th user
+			counter=0
+			for i in `last -w ${!name}`
+			do
+
+	        		if [ "$i" == "${!name}" ];
+	        		then
+	                		counter=$((counter+1))
+	        		fi
+
+			done
+
+			echo "Number of times that ${!name} has logged into this machine is $counter"
+		
+		fi
+
+	done
+	
+	if [ $valid -eq 0 ]
+	then
+		echo "${!name} doesn't seem to be a student in the system, please check spelling..."
+	fi	
+done
+
