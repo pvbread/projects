@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [ $# -eq 0 ] || [ $# -gt 1 ]
+then
+	echo "Enter 1 pdb file only. Usage: atomCoordinates <file.pdb>."
+	exit
+fi
+
+if [ -f $1 ]
+then
+	echo "$(grep -i "^atom" $1 | awk '{print $2, $7, $8, $9}')"
+else
+	echo "$1 is not a file. Usage: atomCoordinates <file.pdb>."
+fi
