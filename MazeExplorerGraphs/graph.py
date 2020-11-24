@@ -59,7 +59,6 @@ def build_graph():
   grand_gallery = Vertex('grand gallery')
   treasure_room = Vertex('treasure room')
 
-  # ADD ROOMS TO GRAPH BELOW...
   graph.add_vertex(entrance)
   graph.add_vertex(ante_chamber)
   graph.add_vertex(kings_room)
