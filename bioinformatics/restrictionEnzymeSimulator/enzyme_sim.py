@@ -131,7 +131,7 @@ def program(enzymes, dna):
 					os.mkdir(output_dir)
 				dna_file_name = sys.argv[2]
 
-				#take out these 4 lines if you wish to preserve the prefix in output file
+				#take out these 4 lines if you wish to preserve the file extension in output file
 				if ".txt" in sys.argv[2]:
 					dna_file_name = sys.argv[2].split(".txt")[0]
 				elif ".fasta" in sys.argv[2]:
