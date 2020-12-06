@@ -37,6 +37,7 @@ def file_processing():
 		exit()
 
 	if len(sys.argv) != 3:
+		print("Missing or too many arguments.")
 		usage()
 
 	if not os.path.isfile(sys.argv[1]) or not os.path.isfile(sys.argv[2]):
