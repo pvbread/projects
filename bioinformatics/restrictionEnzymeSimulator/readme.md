@@ -15,7 +15,7 @@ This has been tested for Mac compatibility, but not for Windows, although
 it should work as well.
 <br /><br />
 <b>A word of caution:</b>
-Using 2 files with the same name but different file names will cause the
+Using 2 files with the same name but different file extensions will cause the
 output files to override.
 <br /><br />
 E.g.: dna.fasta and dna.txt will produce output files named dna_enzyme
