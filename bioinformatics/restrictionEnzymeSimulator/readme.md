@@ -21,5 +21,5 @@ output files to override.
 E.g.: dna.fasta and dna.txt will produce output files named dna_enzyme
 This is to avoid overly long text files such as XM_002638640.fasta_AatII
 If however, you need to have this overlapping functionality, you can simply
-comment out lines 132-135 of the code and it should now output as
+comment out lines 137-140 of the code and it should now output as
 dna.suffix_enzyme etc.
