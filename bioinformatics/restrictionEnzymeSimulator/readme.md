@@ -1,7 +1,7 @@
 enzyme_sim.py -- Restriction Enzyme Simulation
 December 5th, 2020
 Usage: enzyme_sim.py enzyme_file mydna_file
------------------------------------------------------------------------------
+
 Main program
  
 A program that takes an enzyme file in simplified Staden file format 
