@@ -71,7 +71,10 @@ def run_program(atoms):
 		if not query:
 			print("\n1. total\n2. atomhistogram\n3. reshistogram\n4. atominfo\n5. residueinfo\n")
 			while(type(query) != "int" and (query > 5 or query < 1)):
-				query = int(input("Please enter a number 1-5 for info on a specific command: "))
+				try:
+					query = int(input("Please enter a number 1-5 for info on a specific command: "))
+				except:
+					pass
 
 		if query == 1:
 			print("\nUsage: total\nThis command outputs how many distinct files are in the provided file.\n")
