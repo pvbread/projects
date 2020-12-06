@@ -97,18 +97,6 @@ def run_program(atoms):
 			print("{}: {}".format(key.strip(' '), value))
 		print("\n")
 
-	def get_residue_freq():
-
-		frequencies = {}
-		for value in atoms.values():
-			try:
-				frequencies[value[2]] += 1
-			except:
-				frequencies[value[2]] = 1
-		sorted_frequencies = sorted(frequencies.items(), key=lambda x: (-x[1],x[0])) # the - takes care of reverse ordering
-		for key, value in sorted_frequencies:
-			print("{}: {}".format(key.strip(' '), value))
-		print("\n")
 
 	def atomresidueinfo(item, idx):
 		instances = 0
