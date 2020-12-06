@@ -21,7 +21,7 @@ output files to override.
 E.g.: dna.fasta and dna.txt will produce output files named dna_enzyme
 This is to avoid overly long text files such as XM_002638640.fasta_AatII
 If however, you need to have this overlapping functionality, you can simply
-comment out lines 132-135 of the code and it should now output as
+comment out lines 137-140 of the code and it should now output as
 dna.suffix_enzyme etc.
 '''
 #-----------------------------------------------------------------------------
@@ -66,8 +66,13 @@ def file_processing():
 				if char.lower() not in valid_chars:
 					print("Error, non A-C-G-T char in file")
 					valid_read = False
+				
 	except:
 		print("Something went wrong with reading your dna file")
+		usage()
+	
+	if not valid_read:
+		print("Error, non A-C-G-T char in file")
 		usage()
 
 	try:
@@ -75,9 +80,6 @@ def file_processing():
 			enzyme_data = enzyme_file.read()
 	except:
 		print("Something went wrong with reading your enzyme file")
-		usage()
-
-	if not valid_read:
 		usage()
 
 	return enzyme_data, dna_data
