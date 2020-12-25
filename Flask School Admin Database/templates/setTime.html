@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block head %}
+{{ super() }}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='setTime.css') }}">
+{% endblock %}
+
+{% block page_content %}
+
+
+
+<div class="big-container" style="display: flex;">
+		<div class="container" style="width:50%;">
+				
+				<h3>Add a class session time</h3>
+				<p>
+					If you wish to add a session time, please choose the class first, pick a day, time, and room, and press the add button.
+
+					To drop a session time: Pick a class and click "See times", this will generate a dropdown to pick a time to remove.
+				</p>
+				<form action="" method="POST">
+						<p><div class="class-dropdown"></div></p>
+						
+						<p>
+						
+						<div id="add-time">
+								
+										Add a class session for: <div id="add-class"></div>
+										{{ wtf.quick_form(form) }}
+	
+						{% if session_form %}
+							<form id="modify-form" action="/setTime" method="POST">
+								{{ wtf.quick_form(session_form) }}
+							</form>
+
+						{% endif %}
+								</p>	
+								<p>	
+									Day:
+
+									<select name="days-dropdown">
+										<option value="Monday">Monday</option>
+										<option value="Tuesday">Tuesday</option>
+										<option value="Wednesday">Wednesday</option>
+										<option value="Thursday">Thursday</option>
+										<option value="Friday">Friday</option>
+										<option value="Saturday">Saturday</option>
+										<option value="Sunday">Sunday</option>
+									</select> 
+								</p>
+
+								<p style="display:inline;">
+									Room:
+									  
+									<select name="room-dropdown">
+										<option value="Harvard">Harvard</option>
+										<option value="Columbia">Columbia</option>
+										<option value="Princeton">Princeton</option>
+										<option value="Yale">Yale</option>
+										<option value="Dartmouth">Dartmouth</option>
+										<option value="Stanford">Stanford</option>
+									</select>
+								</p>
+
+								<p style="margin-top:10px;">
+
+									Start:
+
+									<select name="start-hour" class="start-hour"></select>:
+									<select name="start-minute" class="start-minute">
+										<option value="0">00</option>
+										<option value="30">30</option>
+									</select>
+
+									End:
+
+									<select name="end-hour" id="end-hour" class="end-hour"></select>:
+									<select name="end-minute" id="end-minute" class="end-minute">
+										<option value="0">00</option>
+										<option value="30">30</option>
+									</select>
+
+								</p> 
+								<p>
+									<button type="submit" id="confirm-add-button" name="confirm_add_button" value="Confirm Add">Confirm Add</button>
+								</p>
+						</div>
+				
+						<div id="drop-time" style="display: none;">
+						
+						<div id="remove-time" class="session-dropdown"></div>
+					
+								<p style="margin-top:10px;">
+										<button type="submit" id="confirm-drop" name="confirm-drop-button" value="Confirm Drop">Confirm Drop
+										</button>
+								</p>
+
+						</div>				
+					
+				</form>
+
+		</div>
+
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='setTime.js') }}"></script>
+
+
+{% endblock %}
