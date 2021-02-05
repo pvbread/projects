@@ -1,14 +1,12 @@
 ---
-title: PV Bread
-date: 2021
 githubUsername: 'pvbread'
 ---
 
 
 <h2> I'm Pedro 
 
-<p><em>CS student at Hunter College 
-</em></p>
+<p>CS student at Hunter College 
+</p>
 
 
 
