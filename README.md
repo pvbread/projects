@@ -9,7 +9,7 @@ About me...
 
 <h3>Languages</h3>
 <ul>
-- Python
+  <li> Python </li>
 - Javascript
 - C++
 - CSS
