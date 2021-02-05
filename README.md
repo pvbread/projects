@@ -1,4 +1,4 @@
-<h2> I'm Pedro 
+<h2> I'm Pedro </h2>
 
 <p>CS student at Hunter College 
 </p>
@@ -8,6 +8,7 @@
 About me...  
 
 <h3>Languages</h3>
+<ul>
 - Python
 - Javascript
 - C++
@@ -18,6 +19,7 @@ About me...
 - Java
 - Bash
 - R
+</ul>
 
 <h3>Tools</h3>
 - Unix
