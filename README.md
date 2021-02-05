@@ -23,8 +23,6 @@ const pvBread = {
 
 ---
 
- <img src="https://user-images.githubusercontent.com/20770645/90959204-22aafa00-e4b7-11ea-94d3-0139a8b1fd97.jpg" width="230">
-
  ---
 From [@pvbread](https://github.com/pvbread)
 
