@@ -3,8 +3,6 @@
 <p>CS student at Hunter College 
 </p>
 
-----
-
 About me...  
 
 <h3>Languages</h3>
