@@ -22,4 +22,14 @@ def vector_addition(*args):
 			result[j] += args[i][j]
 	return result
 
+def vector_subtraction(*args):
+	size = len(args[0])
+	result = [0 for x in range(size)]
+	for i in range(len(args)):
+		if size != len(args[i]):
+			raise ValueError("Vectors must be same size for subtraction")
+		for j in range(size):
+			result[j] -= args[i][j]
+	return result
+
 
